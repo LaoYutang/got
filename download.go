@@ -264,6 +264,9 @@ func (d *Download) Size() uint64 {
 
 // Speed returns download speed.
 func (d *Download) Speed() uint64 {
+	if d.Interval == 0 {
+		return 0
+	}
 	return (atomic.LoadUint64(&d.size) - atomic.LoadUint64(&d.lastSize)) / d.Interval * 1000
 }
 
