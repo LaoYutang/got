@@ -1,4 +1,4 @@
-module github.com/melbahja/got
+module github.com/LaoYutang/got
 
 go 1.18
 
