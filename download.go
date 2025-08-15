@@ -254,6 +254,9 @@ func (d *Download) Context() context.Context {
 
 // TotalSize returns file total size (0 if unknown).
 func (d *Download) TotalSize() uint64 {
+	if d.info == nil {
+		return 0
+	}
 	return d.info.Size
 }
 
